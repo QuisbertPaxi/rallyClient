@@ -1,0 +1,39 @@
+<mat-toolbar class="custom-toolbar">
+  <div class="toolbar-left">
+    <button mat-icon-button (click)="sidenav.toggle()" aria-label="Menú">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
+  <div class="toolbar-title">
+    CFU
+  </div>
+  <div class="contenedor_datos">
+    <div style="margin-right: 20px;">
+      <div class="nombre">
+        {{ participanteDatos.nombre | titlecase }} {{ participanteDatos.apellidos | titlecase }}
+      </div>
+      <div class="rol">
+        {{ participanteDatos.role | titlecase }}
+      </div>
+    </div>
+  
+    <button mat-icon-button routerLink="/participante/inicio" aria-label="Ir a inicio">
+      <mat-icon>home</mat-icon>
+    </button>
+  </div>
+</mat-toolbar>
+
+<mat-sidenav-container style="height: calc(100vh - 64px);" class="full-height-container">
+  <mat-sidenav #sidenav mode="over" class="sidebar">
+    <nav style="padding: 16px;">
+      <p><a routerLink="/participante/perfil" routerLinkActive="active-link" (click)="sidenav.close()">Editar Perfil</a></p>
+      <p><a routerLink="/participante/inicio" routerLinkActive="active-link" (click)="sidenav.close()">Mis Fotografías</a></p>
+      <p><a routerLink="/participante/addFotografia" routerLinkActive="active-link" (click)="sidenav.close()">Añadir Fotografía</a></p>
+      <p><a (click)="logout()">Salir</a></p>
+    </nav>
+  </mat-sidenav>
+
+  <mat-sidenav-content class="scrollable-content">
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,76 @@
+  .back {
+    background-color: #94b0d4;
+    color: #143252;
+  }
+
+  .shipping-card {
+    width: 95%;
+    margin: 20px auto;
+    background-color: blackç;
+    padding: 10;
+  }
+
+  #header-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-variant-caps: all-small-caps;
+    font-size: 33px;
+    color: #262539;
+  }
+
+  #centered-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+    font-size: 23px;
+
+  }
+
+  .foto {
+    position: relative;
+    height: 20em;
+    background-image: url("https://images.unsplash.com/photo-1517263904808-5dc91e3e7044?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(20, 3, 46, 0.67);
+    border-radius: 10px;
+  }
+
+  #textImagen {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #FFBE86;
+    z-index: 1;
+    font-variant-caps: all-small-caps;
+    letter-spacing: 0.1em;
+    text-align: center;
+
+  }
+
+  b {
+
+    font-weight: 700;
+    color: #282652;
+  }
+
+  button {
+    border-radius: 7px;
+    letter-spacing: 0.07rem;
+    font-family: "AvertaStd-Regular", -apple-system, system-ui, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, Helvetica, Apple Color Emoji, Arial, Segoe UI Emoji, Segoe UI Symbol;
+    font-weight: 700;
+  }

@@ -1,0 +1,126 @@
+h2 {
+  color: #c5c4e3;
+  font-variant-caps: all-small-caps;
+  letter-spacing: 0.2em;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.outer {
+  display: grid;
+  place-items: center;
+  height: 100%;
+}
+
+.inner {
+  padding: 20px;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.form-card {
+  width: 100%;
+  max-width: 500px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
+  background-color: #5c7dba;
+}
+
+.full-width {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.input-file {
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.button-row {
+  display: grid;
+  place-items: center;
+  height: 100%;
+}
+
+#inner {
+  padding: 20px;
+}
+
+#grip {
+  display: grid;
+  grid-column-gap: 0.75rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-row-gap: 0;
+}
+
+.boton {
+  background-color: #2e78b0 !important;
+  color: #c5c4e3 !important;
+  border-radius: 0.5rem !important;
+  font-weight: bold !important;
+  transition: transform 0.2s ease !important;
+  min-width: 100px;
+
+  &:disabled {
+    background-color: #0074a6a8 !important;
+    cursor: not-allowed;
+  }
+
+  &:hover {
+    background-color: #6e93c2 !important;
+    transform: scale(1.05) !important;
+  }
+}
+
+button {
+  border-radius: 7px;
+  letter-spacing: 0.07rem;
+  font-family: "AvertaStd-Regular", -apple-system, system-ui, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, Helvetica, Apple Color Emoji, Arial, Segoe UI Emoji, Segoe UI Symbol;
+  font-weight: 700;
+}
+
+.file-upload-btn {
+  display: block;
+  padding: 10px 20px;
+  background-color: #586db4;
+  color: #c5c4e3;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease;
+  margin-bottom: 2rem;
+
+  &:hover {
+    background-color: #8981c3;
+  }
+
+  &:active {
+    background-color: darken(#586db4, 10%);
+  }
+}
+
+.texto_max_fotos {
+  text-align: center;
+  margin-top: 5px;
+  font-size: 17px;
+  color: rgb(255, 255, 255);
+  font-weight: 300;
+  letter-spacing: 0.07rem;
+  font-family: Roboto, sans-serif;
+}
+
+.texto_excedido {
+  text-align: center;
+  margin-top: 5px;
+  font-size: 15px;
+  color: rgb(119, 5, 5);
+}

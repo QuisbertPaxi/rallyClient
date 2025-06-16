@@ -1,0 +1,91 @@
+.shipping-card{
+  border-radius: 0%;
+  background-color: #5c7dba;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mat-card-header, .mat-card-content, .mat-card-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+
+.full-width {
+  background-color: transparent !important;
+  flex: 1;
+  min-width: 220px;
+}
+.section {
+  margin-bottom: 24px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+h2 {
+  font-size: 20px;
+  margin: 16px 0 8px 0;
+  color: #282652;
+}
+
+#h2{
+  justify-content: center;
+  align-items: center;
+  text-align: center; 
+  font-variant-caps: all-small-caps;
+  font-size: 33px;
+  color: #262539;
+}
+
+::ng-deep .mat-calendar {
+  background-color: #c5c4e3;
+  border-radius: 4px;
+  margin-bottom: 1%;
+  margin-top: 1%;
+}
+
+::ng-deep .mat-calendar-header {
+  border-radius: 4px 4px 0% 0%;
+  background-color: #bea5d8;
+  }
+
+::ng-deep.mat-calendar-body-selected {
+  background-color: #bea5d8!important ;
+  color: #555daf!important;
+  font-weight: bold;
+}
+
+::ng-deep.mat-calendar-body-today:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical) {
+    border-color: #555daf!important ;
+}
+
+::ng-deep.mat-calendar-body-selected.mat-calendar-body-today {
+    box-shadow: inset 0 0 0 1px #555daf!important;
+}
+
+.grip {
+  display: flex;
+  gap: 16px;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+mat-form-field {
+  background-color: #f2f2f2;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+button {
+  border-radius: 7px;
+  letter-spacing: 0.07rem;
+  font-family:  "AvertaStd-Regular",-apple-system, system-ui, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, Helvetica, Apple Color Emoji, Arial, Segoe UI Emoji, Segoe UI Symbol;
+  font-weight: 700;
+}

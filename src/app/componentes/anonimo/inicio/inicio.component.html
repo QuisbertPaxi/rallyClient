@@ -1,0 +1,112 @@
+
+<div class="container">
+  <div class="column1">
+    <div class="main-container">
+      <div class="header-title">
+        <h1>CFU</h1>
+      </div>
+      <div class="main-content" aria-hidden="true">
+        <div class="content-container">
+          <p class="text" >
+            <strong>Captura la ciudad. Comparte tu mirada. Inspira al mundo.</strong>
+          </p>
+          <p >
+            Bienvenidos al Concurso de Fotografía Urbana (CFU) 2025, un espacio donde el arte y la ciudad se encuentran.
+            Queremos descubrir como ves tu entorno urbano: sus contrastes, su ritmo, sus luces y sombras. Ya sea a través de un instante cotidiano,
+            una arquitectura imponente, o una escena callejera inesperada, tu lente puede contar historias que
+            merecen ser vistas.
+          </p>
+          <p >
+            Este consurso esta abierto a fotografos profesionales, aficionados, y a toda persona con una mirada única sobre la ciudad.
+            Participa, muestra tu talento y forma parte de una comunidad creativa que celebra la vida urbana en todas sus formas.
+          </p>
+          <p class="text"><strong>¿Listo para encuadrar la ciudad desde tu perspectiva?</strong></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="column2">
+    <div class="main-container">
+      <mat-grid-list cols="2" rowHeight="200px" gutterSize="8px">
+        <mat-grid-tile
+          *ngFor="let image of images"
+          [colspan]="image.cols"
+          [rowspan]="image.rows">
+          <img [src]="image.src" [alt]="image.alt" style="width: 100%; height: 100%; object-fit: cover;" />
+        </mat-grid-tile>
+      </mat-grid-list>
+    </div>
+  </div>
+</div>
+@defer (on viewport) {
+<div class="fechas-grid">
+  <div class="titulo">FECHAS CLAVES</div>
+
+  <div class="etiqueta">Fecha de inicio y fin de envio de fotografías</div>
+  <div class="etiqueta resaltado">Inicio y cierre de votación</div>
+  <div class="etiqueta">Anuncio de los ganadores</div>
+
+  <div class="fecha">{{ fEnvioIni }} - {{ fEnvioFin }}</div>
+  <div class="fecha resaltado">{{ fVotoIni }} - {{ fVotoFin }}</div>
+  <div class="fecha">{{ fGanadores }}</div>
+</div>
+} @placeholder {
+  <div class="placeholder-cargando">
+    <p>Cargando contenido...</p>
+  </div>
+}
+@defer (on viewport) {
+  <div class="container">
+    <div class="column1">
+      <div class="text-wrapper">
+        <h2>Reglas del concurso</h2>
+        <h3>1.- Participación</h3>
+        <p>- El consurso está abierto a personas mayores de 18 años, sin importar su país de residencia o experiencia fotográfica.</p>
+        <p>- Cada participante podrá enviar <strong>sólo una fotografía</strong></p>
+        <h3>2.- Registro</h3>
+        <p>- Es obligatorio registrarse en la plataforma para poder participar.</p>
+        <h3>3.- Requisitos de la fotografía</h3>
+        <p>-La fotografía debe capturar algún aspecto del entrono urbano: arquitectura, vida callejera, transporte, constrastes urbanos, etc.</p>
+        <p>- Se aceptan únicamente archivos digitales en formato .JPG</p>
+        <h3>4.- Premios</h3>
+        <p>- Se entregarán premios a las fotografías más votadas por el público.</p>
+        <p>- Los detalles de los premios serán anunciados próximamanete en ésta página</p>
+      </div>
+    </div>
+    <div class="column2">
+      <img src="https://www.dzoom.org.es/wp-content/uploads/2017/07/seebensee-2384369-810x540.jpg" alt="Descripción imagen" class="image-small" />
+    </div>
+  </div>
+} @placeholder {
+  <div class="placeholder-cargando">
+    <p>Cargando contenido...</p>
+  </div>
+}
+@defer (on viewport) {
+  <div class="container">
+    <div class="column1">
+      <img src="https://www.dzoom.org.es/wp-content/uploads/2017/07/seebensee-2384369-810x540.jpg" alt="Descripción imagen" class="image-small" />
+    </div>
+    <div class="column2">
+      <div class="text-wrapper">
+        <h3>5.- Votación</h3>
+        <p><span class="font-circle">●</span> Las fotografías serán publicadas en la galeria oficial del consurso.</p>
+        <p><span class="font-circle">●</span> La <strong>votación será pública y abierta</strong>, a través del sitio web.</p>
+        <p><span class="font-circle">●</span> Cada participante podrá emitir <strong>un voto pot fotografía.</strong>.</p>
+        <p><span class="font-circle">●</span> Las imagenes con mayor cantidad de votos serán declaradas ganadoras.</p>
+        <p><span class="font-circle">●</span> Se podrá visualizar el seguimiento de las votaciones.</p>
+        <div class="grip">
+        <button mat-flat-button routerLink="/Galeria"
+          style="background-color:#856abb; color: #c5c4e3;">Galería</button>
+        <button mat-flat-button routerLink="/Stats"
+          style="background-color:#b167c2; color: #c5c4e3;">Estadísticas</button>
+      </div>
+      </div>
+    </div>
+  </div>
+} @placeholder {
+  <div class="placeholder-cargando">
+    <p>Cargando contenido...</p>
+  </div>
+}

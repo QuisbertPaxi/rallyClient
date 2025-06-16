@@ -1,0 +1,30 @@
+<div id="container">
+    <h2>ESTADÍSTICAS</h2>
+  <div class="grid-container">
+    <div class="item item-main">
+      <h2 class="titulo">FINALISTAS</h2>
+      <div class="chart-container">
+        <canvas #chartCanvas></canvas>
+      </div>
+    </div>
+
+    <div class="item item-sidebar">
+      
+      <div class="titulo-ganador">
+          <span class="mat-headline">GANADOR</span>
+      </div>
+
+      <mat-card *ngIf="ganador" class="ganador-container">
+        <mat-card-header>
+          <mat-card-title class="titulo"><h3>{{ ganador.titulo }}</h3></mat-card-title>
+        </mat-card-header>
+    
+        <mat-card-content>
+          <img mat-card-image [src]="ganador.link" alt="Foto ganadora" />
+          <h5>{{ ganador.descripcion }}</h5>
+          <h1><strong>Votos:</strong> {{ ganador.cantidadVotos }}</h1>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

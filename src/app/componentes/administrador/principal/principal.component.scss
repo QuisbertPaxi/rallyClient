@@ -1,0 +1,94 @@
+.photo-form-container {
+  padding: 24px;
+  background-color: #f5f7fa;
+}
+
+.photo-form-container h2 {
+  text-align: center;
+  margin-bottom: 32px;
+  font-size: 28px;
+  color: #123456;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.photo-entry {
+  margin-bottom: 32px;
+}
+
+.photo-card {
+  padding: 20px;
+  background-color: #e3eaf3;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.photo-row {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .photo-row {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.image-placeholder {
+  width: 600px;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid #ccc;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.photo-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.select-field {
+  width: 100%;
+  max-width: 300px;
+}
+
+.option {
+  background-color: #dee4f3 !important;
+  color: #123456 !important;
+}
+
+.option:hover {
+  background-color: #b8c4e3 !important;
+}
+
+.descripcion-label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #345;
+  margin-bottom: 4px;
+}
+
+.descripcion-text {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 12px;
+  border-radius: 6px;
+  min-height: 60px;
+  font-size: 15px;
+  color: #333;
+  white-space: pre-wrap;
+}
+
+.info-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}

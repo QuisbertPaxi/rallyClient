@@ -1,0 +1,27 @@
+<div id="container">
+    <h1>GALERIA</h1>
+  <mat-card-content *ngIf="yaVoto">
+    <h4>Usted ya emitió su voto</h4>
+  </mat-card-content>
+  <div class="galeria-container">    
+    @for (foto of fotografias; track $index) {
+    <mat-card class="galeria-card">
+      <img mat-card-image [src]="foto.link" [alt]="foto.titulo" />
+      <mat-card-header>
+        <mat-card-title><h3>{{ foto.titulo }}</h3></mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <h5>{{ foto.descripcion }}</h5>
+      </mat-card-content>
+      <mat-card-content>
+        <h4 id="numvotos">{{ foto.cantidadVotos }}</h4>
+      </mat-card-content>
+      <mat-card-actions class="boton-votar-wrapper" *ngIf="!yaVoto">
+        <button mat-raised-button class="boton-votar" (click)="votar(foto)">
+          Votar
+        </button>
+      </mat-card-actions>
+    </mat-card>
+    }
+  </div>
+</div>

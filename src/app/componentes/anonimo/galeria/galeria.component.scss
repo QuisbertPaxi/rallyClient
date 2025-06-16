@@ -1,0 +1,117 @@
+#container{
+  background-color: #8f98cb;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh
+  
+}
+
+h1{
+  color: #262539;
+    font-variant-caps: all-small-caps;
+    letter-spacing: 0.2em;
+    line-height: 1.2;
+    text-align: center;
+    font-size: 10cap;
+}
+
+.galeria-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px; /* Espacio entre cards */
+  justify-content: center; /* Centrar cards */
+  padding: 16px;
+}
+
+.galeria-card {
+  flex: 1 1 500px; /* Tamaño base: mínimo 300px, crecer si hay espacio */
+  max-width: 600px; /* Opcional: no más ancho que esto */
+  display: flex;
+  flex-direction: column;
+  background-color: #6f7ac4;
+}
+
+.galeria-card img {
+  height: 300px; /* Ajusta según quieras tamaño */
+  object-fit: cover;
+   border-radius: 4px 4px 0 0; /* Redondea solo las esquinas superiores */
+}
+
+h3, h4,h5{
+  color: #143252;
+}
+
+h3{
+    font-weight: 700;
+    font-family: Averta, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 16px;
+    color: #282652;
+}
+
+h5{
+  font-size: 1rem;
+}
+
+h4{
+  font-size: 1.5rem;
+  color: #7d358d;
+}
+.boton-votar-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.boton-votar {
+  background-color: #7d358d;
+  color: #c5c4e3;
+  border-radius: 20px;
+  font-weight: bold;
+  transition: transform 0.2s ease;
+}
+
+.boton-votar:hover {
+  background-color: #b167c2;
+  transform: scale(1.05);
+}
+
+mat-card-header {
+  justify-content: center;
+}
+
+mat-card-title {
+  text-align: center;
+  width: 100%;
+  font-weight: bold;
+}
+
+mat-card-content {
+  font-size: 1rem;
+  text-align: center;
+}
+
+mat-card-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+
+  h1{
+    font-size: 32px;
+}
+
+  .galeria-container {
+    grid-template-columns: 1fr;
+  }
+
+  mat-card-image {
+    height: 150px;
+  }
+
+  mat-card-title {
+    font-size: 1.1rem;
+  }
+}

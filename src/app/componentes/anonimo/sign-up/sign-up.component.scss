@@ -1,0 +1,104 @@
+.full-width {
+  width: 100%;
+}
+
+#h2 {
+  color: #c5c4e3;
+  font-variant-caps: all-small-caps;
+  letter-spacing: 0.5em;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.marginbot {
+  margin-bottom: 2em;
+}
+
+.mat-radio-button {
+  display: block;
+  margin: 5px 0;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.col {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.col:last-child {
+  margin-right: 0;
+}
+
+.outer {
+  display: grid;
+  place-items: center;
+  height: 100%;
+}
+
+.inner {
+  padding: 20px;
+}
+
+.grip {
+
+  display: grid;
+  grid-column-gap: 0.75rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-row-gap: 0;
+
+}
+
+.signup-container {
+  display: flex;
+  min-height: 100vh;
+  font-family: 'Roboto', sans-serif;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.signup-right {
+  flex: 1;
+  background-color: #8981c3;
+  color: #c5c4e3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  font-weight: 600;
+  font-size: 1.8rem;
+  line-height: 1.4;
+  user-select: none;
+  text-align: center;
+}
+
+.signup-right h1 {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.signup-left {
+  flex: 1;
+  background-color: #aba3e4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  position: relative;
+}
+
+form {
+  width: 100%;
+  max-width: 400px;
+}
+
+.close-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  color: #c5c4e3;
+  z-index: 10;
+}

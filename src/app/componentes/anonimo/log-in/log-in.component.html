@@ -1,0 +1,60 @@
+<div class="login-container">
+    <div class="login-left">
+      <h1>
+        Inicia sesión
+        para
+        capturar y
+        compartir la
+        esencia de tu
+        ciudad.
+      </h1>
+    </div>
+    <div class="login-right">
+      <button mat-icon-button class="close-button" routerLink="/">
+        <mat-icon>close</mat-icon>
+      </button>
+      <form [formGroup]="logInForm" (ngSubmit)="onSubmit()">
+        <mat-card style="background-color: #2c70ad;">
+          <mat-card-header class="outer">
+            <mat-card-title class="inner"><h2 id="h2">Iniciar Sesión</h2></mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+
+            <div class="row">
+              <div class="col">
+                <mat-form-field class="full-width">
+                  <input matInput placeholder="Nombre de usuario" formControlName="userName"/>
+                  @if (logInForm.controls['userName'].hasError('required')) {
+                    <mat-error class="marginbot">Nombre de usuario es <strong>requerido</strong></mat-error>
+                  }
+                </mat-form-field>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col">
+                <mat-form-field class="full-width">
+                  <mat-label>Contraseña</mat-label>
+                  <input matInput #password maxlength="10"  [type]="hide ? 'password' : 'text'" formControlName="password">
+                  <mat-hint align="end">{{password.value.length}} / 10</mat-hint>
+                  <button mat-icon-button type="button" matSuffix (click)="clickEvent($event)" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                  </button>
+                  @if (logInForm.controls['password'].hasError('required')) {
+                    <mat-error class="marginbot">La contraseña <strong>requerido</strong></mat-error>
+                  }
+                </mat-form-field>
+              </div>
+            </div>
+          </mat-card-content>
+
+          <mat-card-actions class="outer">
+            <!-- [disabled]="!logInForm.valid" -->
+            <button mat-flat-button style="background-color: #04559b; color:#c5c4e3 ;" type="submit" class="full-width" >
+              Entrar
+            </button>
+          </mat-card-actions>
+        </mat-card>
+      </form>
+  </div>
+</div>

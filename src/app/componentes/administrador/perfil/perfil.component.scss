@@ -1,0 +1,91 @@
+.back {
+  background-color: #5c7dba;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  color: #023952;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.shipping-card {
+  width: 95%;
+  margin: 20px auto;
+  padding: 10;
+}
+
+#h2 {
+  color: antiquewhite;
+  font-variant-caps: all-small-caps;
+  letter-spacing: 0.5em;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.marginbot {
+  margin-bottom: 2em;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.col {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.col:last-child {
+  margin-right: 0;
+}
+
+.outer {
+  display: grid;
+  place-items: center;
+  height: 100%;
+}
+
+.inner {
+  padding: 20px;
+}
+
+.grip {
+
+  display: grid;
+  grid-column-gap: 0.75rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-row-gap: 0;
+
+}
+
+button {
+  border-radius: 7px;
+  letter-spacing: 0.07rem;
+  font-family: "AvertaStd-Regular", -apple-system, system-ui, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, Helvetica, Apple Color Emoji, Arial, Segoe UI Emoji, Segoe UI Symbol;
+  font-weight: 700;
+}
+
+
+.btn {
+  background-color: #2e78b0 !important;
+  color: #c5c4e3 !important;
+  border-radius: 0.5rem !important;
+  font-weight: bold !important;
+  transition: transform 0.2s ease !important;
+  min-width: 100px;
+
+  &:disabled {
+    background-color: #02354b;
+    cursor: not-allowed;
+  }
+
+  &:hover {
+    background-color: #6e93c2 !important;
+    transform: scale(1.05) !important;
+  }
+}
+
+#color {
+  background-color: #856abb !important;
+}

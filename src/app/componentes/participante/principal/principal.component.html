@@ -1,0 +1,39 @@
+<mat-card class="shipping-card foto">
+    <div class="overlay"></div>
+      <mat-card-content id="textImagen">
+        <h1>Muestranos tu perspectiva de las cosas</h1>
+      </mat-card-content>
+    </mat-card>
+<div class="galeria-container">
+  @for (foto of fotografias; track $index) {
+  <mat-card class="galeria-card">
+    <img mat-card-image [src]="foto.link" [alt]="foto.titulo" />
+    <mat-card-header>
+      <mat-card-title>{{ foto.titulo }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>{{ foto.descripcion }}</p>
+    </mat-card-content>
+    <mat-card-content>
+      <p>{{ foto.estado }}</p>
+    </mat-card-content>
+    <mat-card-actions class="boton-votar-wrapper" *ngIf = "foto.estado == 'PENDIENTE'">
+      <button mat-raised-button class="boton-edit" (click)="editarFotografia(foto)">
+        Editar
+      </button>
+      <button mat-raised-button class="boton-delete" (click)="eliminarFoto(foto)">
+        Eliminar
+      </button>
+    </mat-card-actions>
+  </mat-card>
+  }
+</div>
+
+<div *ngIf="!fotografias || fotografias.length === 0" class="sin-fotos">
+  <div>
+    <h1>No tienes fotografías aún.</h1>
+  <button mat-raised-button style="border-radius: 7em;" class="btn-sinfotos" (click)="irAddFotografia()">
+    Añadir Fotografía
+  </button>
+  </div>
+</div>

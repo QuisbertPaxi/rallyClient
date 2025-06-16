@@ -1,0 +1,21 @@
+<mat-card class="shipping-card foto">
+  <div class="overlay"></div>
+  <mat-card-content id="textImagen">
+  <h1>Aquí es donde la creatividad se encuentra con la organización. Bienvenido al corazón de tus concursos fotográficos.</h1></mat-card-content>
+</mat-card>
+        <mat-card class="shipping-card back">
+        <mat-card-header id="header-center">
+          <h2>{{datosConcurso.descripcion}}</h2>
+        </mat-card-header>
+        <mat-card-content id="centered-content">
+          <p><b>Fecha Inicio de Envios: </b>{{fEnvioIni}}</p>
+          <p><b>Fecha Fin de Envios: </b>{{fEnvioFin}}</p>
+          <p><b>Fecha Inicio de Votación: </b>{{fVotoIni}}</p>
+          <p><b>Fecha Fin de Votación: </b>{{fVotoFin}}</p>
+          <p><b>Fecha Anuncio Ganadores: </b>{{fGanadores}}</p>
+          <p><b>Número de Fotografías permitidas: </b>{{nfotografias}}</p>
+          <div>
+            <button style=" background-color: #2a68aa;" mat-flat-button type="button" routerLink="/admin/editConcurso/{{datosConcurso.id}}">Editar</button>
+          </div>
+        </mat-card-content>
+      </mat-card>
