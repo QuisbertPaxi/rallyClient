@@ -42,8 +42,8 @@ export class UsuarioService {
     )
   }
 
-  deleteUsuarioDataAdmin(id: number){
-    return this._http.delete<{mensaje: string}>(this._URL+'usuarios/').pipe(
+  deleteUsuarioDataAdmin(id: number| null | undefined){
+    return this._http.delete<{mensaje: string}>(this._URL+'usuarios/'+id).pipe(
       catchError(this.handleError)
     )
   }

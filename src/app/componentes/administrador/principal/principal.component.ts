@@ -57,7 +57,7 @@ export class PrincipalComponent implements OnInit{
         });
   }
 
-  seleccionarEstado(foto: any, nuevoEstado: string) {
+  /* seleccionarEstado(foto: any, nuevoEstado: string) {
     const estadoAnterior = foto.estado;
 
     this._alertService
@@ -77,6 +77,34 @@ export class PrincipalComponent implements OnInit{
           this.ngOnInit();
         } else {
           foto.estado = estadoAnterior;
+        }
+    });
+  } */
+ seleccionarEstado(foto: ApiResponseFotografia, nuevoEstado: string) {
+   
+    const esAprobacion = nuevoEstado === 'APROBAR';
+
+    this._alertService
+      .confirmBox("Cambiar Estado", `¿Está seguro de ${esAprobacion ? 'APROBAR' : 'RECHAZAR'} la fotografía "${foto.titulo}"?`)
+      .then((result) => {
+        if (result.value) { 
+          
+          this._fotografiaService.aprobarFotografia(foto.id!, this.adminDatos.id!, esAprobacion).subscribe({
+            next: (resp: any) => { 
+              if (esAprobacion) {
+                this._alertService.alertWithSuccess(`Usted acaba de APROBAR la fotografía "${foto.titulo}"`);
+              } else {
+                this._alertService.alertWithSuccess(`Usted acaba de RECHAZAR y eliminar la fotografía "${foto.titulo}"`);
+              }
+
+              this.ngOnInit();
+            
+            },
+            error: (err) => {
+              this._alertService.alertWithError(`Hubo un error al ${esAprobacion ? 'APROBAR' : 'RECHAZAR'} la fotografía "${foto.titulo}".`);
+              console.error('Error en la operación:', err);
+            }
+          });
         }
     });
   }

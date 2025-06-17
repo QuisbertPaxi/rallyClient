@@ -7,6 +7,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { User } from '../../../modelos/user';
 import { UsuarioService } from '../../../servicios/usuario.service';
 import { TokenService } from '../../../servicios/jwt/token.service';
+import { RolService } from '../../../servicios/jwt/rol.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AlertService } from '../../../servicios/alert.service';
 import { Location } from '@angular/common';
@@ -26,6 +27,7 @@ import { Location } from '@angular/common';
 })
 export class PerfilComponent implements OnInit{
 
+  private readonly _rolService = inject(RolService)
   private readonly _usuarioService = inject(UsuarioService);
   private readonly _tokenService = inject(TokenService)
   private readonly _alertService = inject(AlertService);
@@ -41,12 +43,18 @@ export class PerfilComponent implements OnInit{
     ],
   });
 
+  loggedUserId: number | null = null;
+
   constructor(private router: Router, private location: Location, private activatedRoute: ActivatedRoute) {}
 
 
 ngOnInit(): void {
+
+  this.loggedUserId = this._rolService.getUsuarioId();
   const id = this.activatedRoute.snapshot.paramMap.get('id');
 
+  console.log("id logueado: " + this.loggedUserId);
+  console.log("id de la url: " + id);
   if (id) {
     this._usuarioService.getUsuarioData(Number(id)).subscribe({
       next: (usuario) => {
@@ -117,6 +125,41 @@ ngOnInit(): void {
 
   irAInicio() {
     this.router.navigateByUrl('/participante/inicio');
+  }
+
+  eliminar(): void{
+    const idToDelete = this.activatedRoute.snapshot.paramMap.get('id');
+    const nombre = this.signInForm.controls['nombre']?.value;
+
+    if (idToDelete === null || idToDelete === undefined) {
+      this._alertService.alertWithError("No se pudo obtener el usuario a eliminar");
+      return;
+    }
+
+    this._alertService.confirmBox(
+      "Eliminar usuario",
+       `¿Está seguro de que desea eliminar el usuario con ID: ${nombre}? Esta acción es irreversible.`
+    )
+
+    .then(
+      (result) => {
+        if (result.value) {
+          this._usuarioService.deleteUsuarioDataAdmin(Number(idToDelete)).subscribe({
+            next: () => {
+              this._alertService.alertWithSuccess("Usuario eliminado de manera exitosa.")
+              this._tokenService.removeToken(); 
+              this.router.navigateByUrl(''); 
+            },
+            error: (err) =>{
+              this._alertService.alertWithError("Error al eliminar la cuenta.");
+              console.error('Error al eliminar usuario:', err);
+            }
+
+          })
+        }
+      }
+
+    )
   }
 
 }

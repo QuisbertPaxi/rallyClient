@@ -62,7 +62,7 @@ export const routes: Routes = [
         data: {expectedRole: 'participante'},
         children: [
             { path: 'inicio', component: PrincipalPComponent, data: { expectedRole: 'participante' } },
-            { path: 'perfil', component: PerfilComponent, data: { expectedRole: 'participante' } },
+            { path: 'perfil/:id', component: PerfilComponent, data: { expectedRole: 'participante' } },
             { path: 'addFotografia', component: AddFotografiaComponent, data: { expectedRole: 'participante' }},
             { path: 'addFotografia/:id', component: AddFotografiaComponent, data: { expectedRole: 'participante' }},
             { path: '', redirectTo: 'inicio', pathMatch: 'full' },

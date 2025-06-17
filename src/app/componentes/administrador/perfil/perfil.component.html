@@ -68,8 +68,11 @@
       <mat-card-actions class="outer">
          <div class="inner">            
              <div class="grip">
-                <button mat-flat-button class="btn" id="color" type="submit" [disabled]="!signInForm.valid">Actualizar</button>
+                <button mat-flat-button class="btn" class="color" type="submit" [disabled]="!signInForm.valid">Actualizar</button>
                 <button mat-flat-button class="btn" type="button" (click)="irAInicio()" >Cancelar</button>
+                @if(signInForm.controls["id"].value !== 1 && signInForm.controls["id"].value === loggedUserId){
+                  <button mat-flat-button class="btn" class="color" type="button" (click)="eliminar()" >Eliminar</button>
+                }
              </div>
          </div>
       </mat-card-actions>
