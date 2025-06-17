@@ -80,7 +80,7 @@ export class PrincipalComponent implements OnInit{
         }
     });
   } */
- seleccionarEstado(foto: ApiResponseFotografia, nuevoEstado: string) {
+  seleccionarEstado(foto: ApiResponseFotografia, nuevoEstado: string) {
    
     const esAprobacion = nuevoEstado === 'APROBAR';
 
